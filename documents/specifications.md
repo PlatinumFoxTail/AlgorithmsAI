@@ -1,12 +1,14 @@
 # Specifications
 
-abc
+This document specifies the Datastructures and Algorithms Lab course at University of Helsinki, period III 2024.
 
 ## Topic
 
-The topic of the project is a program that predicts handwritten digits based on a multilayer perceptron (MLP) artificial neural network. The user can choose handwitten digits from the MNIST dataset to be evaluated by the program. Both the chosen handwritten digits by the user and the program predicted digits will be visible for the the user for comparsion.
+The topic of the project is a program that predicts handwritten digits. The user can choose handwitten digits from a specific dataset (MNIST) to be evaluated by the program. Both the chosen handwritten digits by the user and the program predicted digits will be visible for the the user for comparsion.
 
 The MNIST dataset was chosen as suitable starting point prior to analysis of more complex images. MLP artificial neural network was chosen as a springboard to more advanced neural networks such as convolutional neural networks.
+
+based on a multilayer perceptron (MLP) artificial neural network. 
 
 ## Programming languages
 
