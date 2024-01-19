@@ -1,6 +1,6 @@
-# AlgorithmsAI
+# AlgorithmsAI Project
 
-This is a project for Algorithms and AI lab course during Jan-Mar 2024. Topic to be selected.
+Datastructures and Algorithms Lab course in period III 2024. The course is part of Computer Science (B.Sc.) studies at University of Helsinki. The intention is to build a multilayer perceptron (MLP) artificial neural network that will predict the value of the given handwritten digits from MNIST dataset.
 
 ## Documentation
 
