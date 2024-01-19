@@ -14,7 +14,7 @@ Execution
 
 ## Week reports
 
-Week1
+[Week1](https://github.com/PlatinumFoxTail/AlgorithmsAI_Project/blob/main/documents/week_report_1.md)
 
 Week2
 
