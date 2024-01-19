@@ -16,6 +16,8 @@ The program will be based on Python, and the user can run the program via Jupyte
 
 Python unittest will be used for unit testing and Codecov for test coverage.
 
+For peer-reviewing of other course participants' project, I am comfortable with Python, Matlab, and R. I am also eager to learn more about C++ based programs.
+
 ## Algorithm
 
 The main sources for multilayer perceptron artificial network is still to be specified, but a starting point at least:
