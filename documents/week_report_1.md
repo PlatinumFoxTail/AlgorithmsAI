@@ -4,9 +4,9 @@ During this week the main activity has been to scope the project so that i) the 
 
 ## Used hours
 
-| Day |  | Used time | Description
-| -------- | -------- | -------- |
-| 15.1 | 3h | Studying course material |
-| 16.1 | 5h | Project scoping |
-| 19.1 | 1h | Documentation, GitHub configuration |
-| Total | 9h |  |
+| Day   | Used time | Description                  |
+| ----- | --------- | ---------------------------- |
+| 15.1  | 3h        | Studying course material     |
+| 16.1  | 5h        | Project scoping              |
+| 19.1  | 1h        | Documentation, GitHub configuration |
+| Total | 9h        |                              |
