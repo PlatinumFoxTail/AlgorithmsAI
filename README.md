@@ -4,7 +4,7 @@ This is a project for Algorithms and AI lab course during Jan-Mar 2024. Topic to
 
 ## Documentation
 
-Specifications
+[Specifications](https://github.com/PlatinumFoxTail/AlgorithmsAI_Project/blob/main/documents/specifications.md)
 
 Manual
 
