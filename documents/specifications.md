@@ -1,6 +1,6 @@
 # Specifications
 
-This document specifies the Datastructures and Algorithms Lab course in period III 2024. The course is part of Computer Science (B.Sc.) studies at University of Helsinki.
+This document specifies the Algorithms and Artificial Intelligence Lab course in period III 2024. The course is part of Computer Science (B.Sc.) studies at University of Helsinki.
 
 ## Topic
 
