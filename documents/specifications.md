@@ -20,9 +20,13 @@ For peer-reviewing of other course participants' project, I am comfortable with 
 
 ## Algorithm
 
-The main sources for multilayer perceptron artificial network is still to be specified, but a starting point at least:
+The key source for generating the program is the following reference:
+* [Neural Networks and Deep Learning ](http://neuralnetworksanddeeplearning.com/chap1.html)
+
+Other used sources to support the key source are:
 
 * [Wikipedia, Multilayer perceptron ](https://en.wikipedia.org/wiki/Multilayer_perceptron)
+* [Mathemathics for Machine learning ] (https://mml-book.github.io/)
 
 ## Documentation
 
