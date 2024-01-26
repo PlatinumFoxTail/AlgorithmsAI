@@ -6,7 +6,7 @@ This is a project related to Algorithms and Artificial Intelligence Lab course i
 
 [Specifications](https://github.com/PlatinumFoxTail/AlgorithmsAI_Project/blob/main/documents/specifications.md)
 
-Manual
+[Manual](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/manual.md)
 
 Testing
 
