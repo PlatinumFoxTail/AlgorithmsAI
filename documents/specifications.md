@@ -26,7 +26,7 @@ The key source for generating the program is the following reference:
 Other used sources to support the key source are:
 
 * [Wikipedia, Multilayer perceptron ](https://en.wikipedia.org/wiki/Multilayer_perceptron)
-* [Mathemathics for Machine learning ] (https://mml-book.github.io/)
+* [Mathemathics for Machine learning ](https://mml-book.github.io/)
 
 ## Documentation
 
