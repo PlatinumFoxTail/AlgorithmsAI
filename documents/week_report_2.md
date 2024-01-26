@@ -8,7 +8,7 @@ During this week the main focus was set to generate an end to end concept for:
 Quite significant effort was set to create the end to end concept, and hence testing has not been initiated yet.
 
 The following weeks I can not unfortunately use as much time as this week on the project. The next week though, I like to put a bit time to catch up on the testing. In order to save time for setting up the actual required testing and not searching for suitable references for that, I was hoping for some guidance regarding testing. Would it be possible to give some guidance on the testing related questions below?
-* How to prioritize the testing order application e.g. i) network.py ii) digit_predicter.ipynb iii) mnist_loader?
+* How to prioritize the testing order of the application e.g. i) network.py ii) digit_predicter.ipynb iii) mnist_loader?
 * What reference material would be most suitable for the aforementioned python and jupyter files e.g. [this unit testing material](https://github.com/TiraLabra/Testing-and-rmq) seemed to be more related to Java?
 * Other testing realted items in prioritization order e.g. codecov badge?
 
