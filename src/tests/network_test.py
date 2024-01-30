@@ -11,3 +11,4 @@ class TestNetwork(unittest.TestCase):
         
         self.assertEqual(network.num_layers, len(sizes))
         self.assertEqual(network.sizes, sizes)
+
