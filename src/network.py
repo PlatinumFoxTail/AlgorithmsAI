@@ -14,7 +14,9 @@ class Network(object):
 
     #intialization of Network object
     def __init__(self, sizes):
+        #number of layers in network
         self.num_layers = len(sizes)
+        #number of neurons in layer
         self.sizes = sizes
         #random intialization to generate Gaussian distributions with mean 0 and standard deviation 1
         #with zip combining x and y into pairs of tuples based on shortest input 
