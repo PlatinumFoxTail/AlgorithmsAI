@@ -1,5 +1,6 @@
 import random
-import numpy as np 
+import numpy as np
+from typing import Optional 
 
 # sigmoid function
 def sigmoid(z):
