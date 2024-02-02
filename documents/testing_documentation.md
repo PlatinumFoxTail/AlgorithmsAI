@@ -23,6 +23,6 @@ Initial idea/plan as of 2nd of Feb how to perform sanity check:
 
 For checkstyle pylint has been used. As of 2nd of Feb the code has been rated as 6.70/10.
 
-TODO:
+TO DO:
 * Unit test for SGD method
 * Improve pylint score
