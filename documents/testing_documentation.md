@@ -21,5 +21,4 @@ Initial idea/plan as of 2nd of Feb how to perform sanity check:
 ![GHA workflow badge](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/workflows/CI/badge.svg) 
 [![codecov](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork/graph/badge.svg?token=4JBGC70B3Z)](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork)
 
-Placeholder for...:
-* pylint
+For checkstyle pylint has been used. As of 2nd of Feb the code has been rated as 6.70/10.
