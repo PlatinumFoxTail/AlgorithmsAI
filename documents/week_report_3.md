@@ -15,6 +15,6 @@ Next week I would like to test the sanity comparsion idea in practice. At the mo
 | ----- | --------- | ---------------------------- |
 | 30.1  | 1h        | Familiarizing with testing material      |
 | 31.1  | 2h        | Setting up unit tests. Planning meeting aobut project testing              |
-| 1.2  | 3h        | Unit testing |
+| 1.2  | 4h        | Unit testing |
 | 2.2  | 2h        | Week report and initiating testing documentation |
 | Total | 8h        |                              |
