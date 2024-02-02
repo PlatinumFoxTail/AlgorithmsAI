@@ -18,6 +18,8 @@ Initial idea/plan as of 2nd of Feb how to perform sanity check:
 
 ## Unit testing and checkstyle
 
+[test](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/actions/workflows/WORKFLOW-FILE/badge.svg)
+
 Placeholder for...:
 * Codecov badge
 * pylint
