@@ -18,7 +18,8 @@ Initial idea/plan as of 2nd of Feb how to perform sanity check:
 
 ## Unit testing and checkstyle
 
-![GHA workflow badge](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/workflows/CI/badge.svg) [![codecov](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork/graph/badge.svg?token=4JBGC70B3Z)](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork)
+![GHA workflow badge](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/workflows/CI/badge.svg) 
+[![codecov](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork/graph/badge.svg?token=4JBGC70B3Z)](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork)
 
 Placeholder for...:
 * pylint
