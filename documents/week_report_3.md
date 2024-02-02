@@ -7,7 +7,7 @@ During this week the testing was initiated. Together with the course teacher it 
 * Train the simplified network and own network with the simplified input
 * Compare intermediate calculation steps between the simplified network and own network e.g. feedforward outputs.
 
-Next week I would like to test the sanity comparsion idea in practice. At the moment it feels not too solid, so any guidance for a smoother start would be appreciated e.g. which pixels out of the original MNIST 28 x 28 pixels (784) would make most sense to start of with to simplify the data? Could it be 3 x 3 shaped square? Also first ideas where to look for suitable simplified networks for this purpouse would be helpful.
+Next week I would like to test the sanity comparsion idea in practice. At the moment it feels not too solid, so any guidance for a smoother start would be appreciated e.g. which pixels out of the original MNIST 28 x 28 pixels (784) would make most sense to start of with to simplify the data? Could it be 3 x 3 shaped square in the center of the images? Also first ideas where to look for suitable simplified networks for this purpouse would be helpful.
 
 ## Used hours
 
