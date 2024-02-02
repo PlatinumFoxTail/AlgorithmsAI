@@ -8,5 +8,9 @@ The coverage as of 2nd of Feb is 73%. Codecov badge as well as pylint to be adde
 
 ## Sanity check
 
+Placholder for sanity check results. Idea/plan as of 2nd of Feb:
 
-*
+* Simplify the MNIST input images e.g. to 10pixels
+* Set up a simplified network e.g. ready library
+* Train the simplified network and own network with the simplified input
+* Compare intermediate calculation steps between the simplified network and own network e.g. feedforward outputs.
