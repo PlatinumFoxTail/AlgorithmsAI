@@ -20,10 +20,5 @@ Initial idea/plan as of 2nd of Feb how to perform sanity check:
 
 ![GHA workflow badge](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/workflows/CI/badge.svg) [![codecov](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork/graph/badge.svg?token=4JBGC70B3Z)](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork)
 
-[![codecov](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork/graph/badge.svg?token=IG4V2D4G5H)](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork)
-
 Placeholder for...:
-* Codecov badge
 * pylint
-
-As of 2nd of Feb coverage is 73%. To be finalized when unit tests are finalized.
