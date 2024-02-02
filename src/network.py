@@ -14,7 +14,7 @@ def sigmoid_prime(z):
 class Network(object):
 
     #intialization of Network object
-    def __init__(self, sizes):
+    def __init__(self, sizesSS):
         #number of layers in network
         self.num_layers = len(sizes)
         #number of neurons in layer
