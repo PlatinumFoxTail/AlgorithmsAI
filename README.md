@@ -18,7 +18,7 @@ Execution
 
 [Week2](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/week_report_2.md)
 
-Week3
+[Week3](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/week_report_3.md)
 
 Week4
 
