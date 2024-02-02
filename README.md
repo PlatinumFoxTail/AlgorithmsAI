@@ -8,7 +8,7 @@ This is a project related to Algorithms and Artificial Intelligence Lab course i
 
 [Manual](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/manual.md)
 
-Testing
+[Testing](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/testing_documentation.md)
 
 Execution
 
