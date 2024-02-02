@@ -37,7 +37,7 @@ class TestNetwork(unittest.TestCase):
         for i in range(len(self.network.biases)):
             self.assertFalse(np.array_equal(starting_biases[i], self.network.biases[i]))
 
-    # CONTINUE TO MAKE UNIT TEST FOR SGD.
+    # CONTINUE TO MAKE UNIT TEST FOR SGD
     
     #Test working, but not actually improving the coverage rate of network.py
     '''def test_initializing_biases_and_weights(self):
