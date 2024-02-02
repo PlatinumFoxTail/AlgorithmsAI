@@ -8,7 +8,12 @@ The coverage as of 2nd of Feb is 73%. Codecov badge as well as pylint to be adde
 
 ## Sanity check
 
-Placholder for sanity check results. Idea/plan as of 2nd of Feb:
+Placeholder for sanity check...:
+* description
+* results
+* instructions how to repeat
+
+Initial idea/plan as of 2nd of Feb how to perform sanity check:
 
 * Simplify the MNIST input images e.g. to 10pixels
 * Set up a simplified network e.g. ready library
