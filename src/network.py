@@ -19,11 +19,25 @@ class Network(object):
         self.num_layers = len(sizes)
         #number of neurons in layer
         self.sizes = sizes
+        
+        '''For user interface purpouse i.e. digit_predicter.ipynb
         #random intialization to generate Gaussian distributions with mean 0 and standard deviation 1
         #with zip combining x and y into pairs of tuples based on shortest input 
         self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
         self.weights = [np.random.randn(y, x)
                         for x, y in zip(sizes[:-1], sizes[1:])]
+        '''
+        
+        '''For testing purpouses i.e. benchmark_networks.py'''
+        #producing same set of random numbers to ensure reproducibility 
+        #for evaluation purposes in benchmark_networks.py
+        np.random.seed(1)
+        #setting biases to zeros, because simple_network.py does not have biases
+        self.biases = [np.zeros((y, 1)) for y in sizes[1:]]
+        #initializing random weights from -1.0 to 1.0 for the weight, as in simple_network.py
+        self.weights = [np.random.uniform(-1.0, 1.0, (y, x))
+                        for x, y in zip(sizes[:-1], sizes[1:])]
+        
     
     #feedforward method, where output from one layer is used as input to the next layer
     def feedforward(self, a):
