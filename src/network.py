@@ -19,7 +19,7 @@ class Network(object):
         self.num_layers = len(sizes)
         #number of neurons in layer
         self.sizes = sizes
-        
+
         '''For user interface purpouse i.e. digit_predicter.ipynb'''
         #random intialization to generate Gaussian distributions with mean 0 and standard deviation 1
         #with zip combining x and y into pairs of tuples based on shortest input 
