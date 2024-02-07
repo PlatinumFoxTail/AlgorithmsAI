@@ -5,7 +5,7 @@ The testing focus of this project is set on the neural network (network.py), and
 ## Sanity check
 
 Placeholder for...:
-* description. NB! For running benchmark_netwroks.py, the biases and weights need to be adjusted in this block https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/58606d727707a75be0624a31732c30e3411abfe9/src/network.py#L30-L39
+* description. NB! For running benchmark_networks.py, the biases and weights need to be uncommented on line 30-39 and commented out on lines 23-28. https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/58606d727707a75be0624a31732c30e3411abfe9/src/network.py#L23-L39
 * results
 * instructions how to repeat
 
