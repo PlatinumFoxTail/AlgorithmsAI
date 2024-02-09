@@ -20,8 +20,8 @@ More importantly it seems that, both networks output from output layer (right-ha
 
 ### Instructions to repeat test
 
-* In the network.py file, the biases and weights need to be uncommented on line 30-39 and commented out on lines 23-28. https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/58606d727707a75be0624a31732c30e3411abfe9/src/network.py#L23-L39
-* Run benchmark_networks.py
+1. In the network.py file, the biases and weights need to be uncommented on line 30-39 and commented out on lines 23-28. https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/58606d727707a75be0624a31732c30e3411abfe9/src/network.py#L23-L39
+2. Run benchmark_networks.py
 
 ## Unit testing and checkstyle
 
