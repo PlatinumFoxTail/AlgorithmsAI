@@ -4,9 +4,9 @@ This document contains the overview of the created program.
 
 ## General structure of program
 
-The program predicts handwritten digits from the MNIST dataset. The actual digit prediction is done in the user-interface (digit_predicter.ipynb), where the neural network (simple_network.py) and MNIST image loader (mnist_loader.py) are utilized. In the user-interface the user can select what MNIST digit to be predicted by the neural network.
+The program predicts handwritten digits from the MNIST dataset. The actual digit prediction is done in the user-interface (digit_predicter.ipynb), where the neural network (network.py) and MNIST image loader (mnist_loader.py) are utilized. In the user-interface the user can select what MNIST digit to be predicted by the neural network.
 
-The network is tested in benchmark_networks.py, where same testing conditions is set up for the network and a simple network (network.py) for comparsion. More information on how to run the so called sanity check is described in [Testing documentation](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/testing_documentation.md). 
+The network is tested in benchmark_networks.py, where same testing conditions is set up for the network and a simple network (simple_network.py) for comparsion. More information on how to run the so called sanity check is described in [Testing documentation](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/testing_documentation.md). 
 
 ## Performance
 
