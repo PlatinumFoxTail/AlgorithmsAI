@@ -12,7 +12,7 @@ The outputs from the neurons in the hidden layer and neuron the final layer was 
 
 ### Results
 
-![Alt text](image_url)
+![Figure 1](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/images/070224.%20network%20vs.%20simple_network.%20eta%200.01%20no%20biases.png))
 
 From the hidden layer outputs in the left-hand side graph in the figure one can notice that, network's neurons 1&4 increases quite uniformly as a function of iterations while corresponding neurons of the simple network also increases but not as quickly. Further on the simple network's neurons 2&3 decrease quite uniformly as a function of iterations while corresponding neurons of the network also decreases, but not as quickly. Based on this observation it seems that network and the simple network hidden layer outputs correlates to each other, somehow "mirrored" e.g. when network's neuron's 1&4 increase uniformly the simple network's neurons 1&4 increase not as quickly and vice verca when simple network's neurons 2&3 decrease uniformly then network's neurons 2&3 decrease not as quickly. The "mirroring" should not be and issue, when testing the sanity of the network since same pair of neurons increases and decreases for both the netowrk and the simple network.
 
