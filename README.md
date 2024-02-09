@@ -10,7 +10,7 @@ This is a project related to Algorithms and Artificial Intelligence Lab course i
 
 [Testing](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/testing_documentation.md)
 
-Execution
+[Execution](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/execution.md)
 
 ## Week reports
 
