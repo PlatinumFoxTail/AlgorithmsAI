@@ -7,7 +7,7 @@ This week was dedicated to set up sanity check of the network including the foll
 * Benchmarking the networks
 * Analyzing test results
 
-Next week I plan to finalize undone things e.g. pylint scores and coverage rate. Also reserving time for the peer-review. No immediate guidance needed at this point.
+Next week I plan to finalize some minor undone things e.g. improve pylint scores and improve coverage rate. Also reserving time for the peer-review. No immediate guidance needed at this point.
 
 ## Used hours
 
