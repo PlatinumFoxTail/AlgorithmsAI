@@ -31,7 +31,7 @@ def train_network(input, output):
         #flatten converts to 1-D array and tolist converts to Python list for plotting purpouses
         hidden_layer_outputs.append(outputs[0].flatten().tolist())
         #only selecting value corresponding to output layer's only neuron
-        output_layer_outputs.append(outputs[-1][0]) 
+        output_layer_outputs.append(outputs[-1][0])
 
     return hidden_layer_outputs, output_layer_outputs
 
@@ -57,10 +57,20 @@ plt.tight_layout()
 plt.subplot(1, 2, 1)
 for i in range(len(hlo_network[0])):
     #plotting every 1000th value
-    plt.plot(range(0, len(hlo_network), 1000), [output[i] for output in hlo_network][::1000], 'x', label=f'network, Neuron {i+1}')
+    plt.plot(
+        range(0, len(hlo_network), 1000),
+        [output[i] for output in hlo_network][::1000],
+        'x',
+        label=f'network, Neuron {i+1}'
+        )
 for i in range(len(hlo_simple_network[0])):
     #plotting every 1000th value
-    plt.plot(range(0, len(hlo_simple_network), 1000), [output[i] for output in hlo_simple_network][::1000], 'o', label=f'simple_network, Neuron {i+1}')
+    plt.plot(
+        range(0, len(hlo_simple_network), 1000),
+        [output[i] for output in hlo_simple_network][::1000],
+        'o',
+        label=f'simple_network, Neuron {i+1}'
+        )
 plt.xlabel('Iterations')
 plt.ylabel('Output')
 plt.title('Hidden Layer Outputs')
@@ -71,7 +81,12 @@ plt.subplot(1, 2, 2)
 #plotting every 1000th value
 plt.plot(range(0, len(olo_network), 1000), olo_network[::1000], 'x', label='network, Neuron 1')
 #plotting every 1000th value
-plt.plot(range(0, len(olo_simple_network), 1000), olo_simple_network[::1000], 'o', label='simple_network, Neuron 1')
+plt.plot(
+    range(0, len(olo_simple_network), 1000),
+    olo_simple_network[::1000],
+    'o',
+    label='simple_network, Neuron 1'
+    )
 plt.xlabel('Iterations')
 plt.ylabel('Output')
 plt.title('Output Layer Outputs')

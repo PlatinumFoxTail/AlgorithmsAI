@@ -1,6 +1,6 @@
 import random
 import numpy as np
-from typing import Optional 
+from typing import Optional
 
 # sigmoid function
 def sigmoid(z):
@@ -22,7 +22,7 @@ class Network(object):
 
         '''For user interface purpouse i.e. digit_predicter.ipynb'''
         #random intialization to generate Gaussian distributions with mean 0 and standard deviation 1
-        #with zip combining x and y into pairs of tuples based on shortest input 
+        #with zip combining x and y into pairs of tuples based on shortest input
         self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
         self.weights = [np.random.randn(y, x)
                         for x, y in zip(sizes[:-1], sizes[1:])]
@@ -88,7 +88,8 @@ class Network(object):
         self.biases = [b-(eta/len(mini_batch))*nb
                        for b, nb in zip(self.biases, nabla_b)]
 
-    #calculating (nabla_b, nabla_w) tuple, which are layer-by-layer lists of numpy arrays and representing gradient of cost function C_x
+    #calculating (nabla_b, nabla_w) tuple, which are layer-by-layer lists of...
+    #numpy arrays and representing gradient of cost function C_x
     def backprop(self, x, y):
         nabla_b = [np.zeros(b.shape) for b in self.biases]
         nabla_w = [np.zeros(w.shape) for w in self.weights]
@@ -98,14 +99,16 @@ class Network(object):
         #initiating storing all activations layer-by-layer
         activations = [x]
         #initiating storing all z vectors, layer-by-layer
-        zs = [] 
+        zs = []
         for b, w in zip(self.biases, self.weights):
             z = np.dot(w, activation)+b
             zs.append(z)
             activation = sigmoid(z)
             activations.append(activation)
 
-        # backward pass, calculating error delta at output layer and propagates it backward to compute gradients of the cost function with respect to biases and weights
+        #backward pass, calculating error delta at output layer and propagates it... 
+        #backward to compute gradients of the cost function with respect to biases...
+        #and weights
         delta = self.cost_derivative(activations[-1], y) * \
             sigmoid_prime(zs[-1])
         nabla_b[-1] = delta

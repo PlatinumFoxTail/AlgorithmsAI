@@ -12,7 +12,7 @@ class SimpleNetwork:
     def __init__(self, input, output):
         self.input = input
         self.output = output
-        #producing same set of random numbers to ensure reproducibility 
+        #producing same set of random numbers to ensure reproducibility
         #for evaluation purposes in benchmark_networks.py
         np.random.seed(1)
         #initializing random weights from -1.0 to 1.0 for a network
@@ -34,7 +34,8 @@ class SimpleNetwork:
             activations_outputlayer = sigmoid(np.dot(activations_hiddenlayer, self.weight_hiddenoutput))
 
             #only selecting value corresponding to hidden layer's four neurons.
-            #flatten converts to 1-D array and tolist converts to Python list for plotting purpouses in benchmark_networks.py
+            #flatten converts to 1-D array and tolist converts to Python list...
+            #for plotting purpouses in benchmark_networks.py
             hidden_layer_outputs.append(activations_hiddenlayer[0].flatten().tolist())
             #only selecting value corresponding to output layer's only neuron
             output_layer_outputs.append(activations_outputlayer[-1].flatten().tolist())
