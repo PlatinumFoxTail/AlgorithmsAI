@@ -106,7 +106,7 @@ class Network(object):
             activation = sigmoid(z)
             activations.append(activation)
 
-        #backward pass, calculating error delta at output layer and propagates it... 
+        #backward pass, calculating error delta at output layer and propagates it...
         #backward to compute gradients of the cost function with respect to biases...
         #and weights
         delta = self.cost_derivative(activations[-1], y) * \
@@ -125,7 +125,7 @@ class Network(object):
 
     #returns vector of partial derivatives of the cost with respect to the output activations
     def cost_derivative(self, output_activations, y):
-        return (output_activations-y)
+        return output_activations-y
 
     #calcualting correct output/test inputs
     def evaluate(self, test_data):

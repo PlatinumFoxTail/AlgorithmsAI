@@ -2,14 +2,12 @@ import pickle
 import gzip
 import numpy as np
 
-'''
-training_data is tuples of 50 000pcs MNIST data. First tuple value contains
+'''training_data is tuples of 50 000pcs MNIST data. First tuple value contains
 MNIST training images and second tuple value is the digit value (0-9) of
 corresponding image. Each image is a numpy ndarray with 784 values (28 x 28 pixels).
 
 validation_data and test_data are similar to training_data, but contains only
-10 000images each.
-'''
+10 000images each.'''
 
 def load_data():
     #opening gzip-compressed file in binary read mode
