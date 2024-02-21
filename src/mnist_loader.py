@@ -8,7 +8,7 @@ import numpy as np
 def load_data():
     #opening gzip-compressed file in binary read mode
     f = gzip.open('mnist.pkl.gz', 'rb')
-    
+
     #deserialize the data from the file with pickel
     training_data, validation_data, test_data = pickle.load(f, encoding="latin1")
     f.close()
@@ -18,7 +18,7 @@ def load_data():
 
 def load_data_wrapper():
     tr_d, va_d, te_d = load_data()
-    
+
     #first tuple element x is 784-dimensional NumPy array representing images
     training_inputs = [np.reshape(x, (784, 1)) for x in tr_d[0]]
     validation_inputs = [np.reshape(x, (784, 1)) for x in va_d[0]]
@@ -31,7 +31,7 @@ def load_data_wrapper():
     #second tuple element y is an integer i.e. image digit value
     validation_data = zip(validation_inputs, va_d[1])
     test_data = zip(test_inputs, te_d[1])
-    
+
     return (training_data, validation_data, test_data)
 
 #unit vector to describe right digit in vector from i.e. certain index 1.0 and other indexes 0 is digit=index 

@@ -42,12 +42,12 @@ class SimpleNetwork:
             output_error = self.output - activations_outputlayer
             #backpropagation of hidden-output weights
             output_delta = output_error * sigmoid_prime(activations_outputlayer)
-            
+
             #backpropagation of error to hidden layer
             hidden_error = output_delta.dot(self.weight_hiddenoutput.T)
             #backpropagation of input-hidden weights
             hidden_delta = hidden_error * sigmoid_prime(activations_hiddenlayer)
-            
+
             #updating weights based on deltas and learning rate eta
             self.weight_hiddenoutput += eta * activations_hiddenlayer.T.dot(output_delta)
             self.weight_inputhidden += eta * input_inputlayer.T.dot(hidden_delta)

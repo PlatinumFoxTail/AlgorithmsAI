@@ -9,14 +9,13 @@ input = np.array([[0, 1, 1], [0, 0, 1], [1, 1, 1], [1, 0, 1]])
 #setting simple output data in binary form, so that 1 neuron in output layer will be able to classify
 output = np.array([[1], [0], [0], [1]])
 
-
 #training network
 def train_network(input, output):
     #3 input neurons, 4 hidden neuons, 1 output neuron
     network = Network([3, 4, 1])
     #reshape to column vectors and make tuples of vector elements
     training_data = [(input.reshape(-1, 1), output.reshape(-1, 1)) for input, output in zip(input, output)]
-    
+
     hidden_layer_outputs = []
     output_layer_outputs = []
 
@@ -79,11 +78,3 @@ plt.title('Output Layer Outputs')
 plt.legend()
 
 plt.show()
-
-'''
-print("Last values from iterations")
-print("Output layer output values network:", olo_network[-1])
-print("Hidden layer output values network:", hlo_network[-1])
-print("Output layer output values simple_network:", olo_simple_network[-1])
-print("Hidden layer output values from simple_network:", hlo_simple_network[-1])
-'''

@@ -5,7 +5,7 @@ from typing import Optional
 # sigmoid function
 def sigmoid(z):
     return 1.0/(1.0 + np.exp(-z))
-    
+
 #derivative of sigmoid function
 def sigmoid_prime(z):
     return sigmoid(z)*(1-sigmoid(z))
@@ -37,14 +37,14 @@ class Network(object):
         self.weights = [np.random.uniform(-1.0, 1.0, (y, x))
                         for x, y in zip(sizes[:-1], sizes[1:])]
         '''
-    
+
     #feedforward method, where output from one layer is used as input to the next layer
     def feedforward(self, a):
         for b, w in zip(self.biases, self.weights):
             #np.dot(w, a) is dot product of arrays w, and a
             a = sigmoid(np.dot(w, a) + b)
         return a
-        
+
     #stochastic gradient descent (SGD) method, where Network object is learning
     def SGD(self, training_data, epochs, mini_batch_size, eta,
             test_data=None):
@@ -87,12 +87,12 @@ class Network(object):
                         for w, nw in zip(self.weights, nabla_w)]
         self.biases = [b-(eta/len(mini_batch))*nb
                        for b, nb in zip(self.biases, nabla_b)]
-        
+
     #calculating (nabla_b, nabla_w) tuple, which are layer-by-layer lists of numpy arrays and representing gradient of cost function C_x
     def backprop(self, x, y):
         nabla_b = [np.zeros(b.shape) for b in self.biases]
         nabla_w = [np.zeros(w.shape) for w in self.weights]
-        
+
         #feedforward pass, calculating activations and wighted inputs for each layer
         activation = x
         #initiating storing all activations layer-by-layer
@@ -104,7 +104,7 @@ class Network(object):
             zs.append(z)
             activation = sigmoid(z)
             activations.append(activation)
-        
+
         # backward pass, calculating error delta at output layer and propagates it backward to compute gradients of the cost function with respect to biases and weights
         delta = self.cost_derivative(activations[-1], y) * \
             sigmoid_prime(zs[-1])
@@ -117,13 +117,13 @@ class Network(object):
             delta = np.dot(self.weights[-l+1].transpose(), delta) * sp
             nabla_b[-l] = delta
             nabla_w[-l] = np.dot(delta, activations[-l-1].transpose())
-        
+
         return (nabla_b, nabla_w)
-    
+
     #returns vector of partial derivatives of the cost with respect to the output activations
     def cost_derivative(self, output_activations, y):
         return (output_activations-y)
-    
+
     #calcualting correct output/test inputs
     def evaluate(self, test_data):
         #neural network's output is index of neuron in final layer with highest activation
