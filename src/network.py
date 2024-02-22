@@ -127,13 +127,6 @@ class Network(object):
     def cost_derivative(self, output_activations, y):
         return output_activations-y
 
-    '''#calcualting correct output/test inputs
-    def evaluate(self, test_data):
-        #neural network's output is index of neuron in final layer with highest activation
-        test_results = [(np.argmax(self.feedforward(x)), y)
-                        for (x, y) in test_data]
-        return sum(int(x == y) for (x, y) in test_results)'''
-
     def evaluate(self, test_data):
         test_results = [(np.argmax(self.feedforward(x)), np.argmax(y)) 
                         for (x, y) in test_data]

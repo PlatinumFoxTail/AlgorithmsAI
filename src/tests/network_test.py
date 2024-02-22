@@ -63,17 +63,18 @@ class TestNetwork(unittest.TestCase):
         
         #checking print was called for all 5 epochs
         self.assertEqual(mock_print.call_count, 5)
-    
-    '''#with patch decorator calls will be replaced with mock object
+
+    #with patch decorator calls will be replaced with mock object
     @patch('network.random.shuffle')
     @patch('builtins.print')
     def test_SGD_without_test_data(self, mock_print, mock_shuffle):
-        
         mock_shuffle.side_effect = lambda x: x  
+        
         mock_print.side_effect = MagicMock()
-
+        
         training_data = [(np.random.randn(self.sizes[0], 1), np.random.randn(self.sizes[-1], 1)) for _ in range(10)]
-
+        
         self.network.SGD(training_data, epochs=5, mini_batch_size=2, eta=0.1)
         
-        self.assertEqual(mock_print.call_count, 5)'''
+        #checking print was called for all 5 epochs, despite of no test_data provided in previous line
+        self.assertEqual(mock_print.call_count, 5)
