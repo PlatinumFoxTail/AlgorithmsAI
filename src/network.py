@@ -35,8 +35,8 @@ class Network(object):
         self.biases = [np.zeros((y, 1)) for y in sizes[1:]]
         #initializing random weights from -1.0 to 1.0 for the weight, as in simple_network.py
         self.weights = [np.random.uniform(-1.0, 1.0, (y, x))
-                        for x, y in zip(sizes[:-1], sizes[1:])]
-        '''
+                        for x, y in zip(sizes[:-1], sizes[1:])]'''
+        
 
     #feedforward method, where output from one layer is used as input to the next layer
     def feedforward(self, a):
@@ -133,7 +133,7 @@ class Network(object):
         test_results = [(np.argmax(self.feedforward(x)), y)
                         for (x, y) in test_data]
         return sum(int(x == y) for (x, y) in test_results)'''
-    
+
     def evaluate(self, test_data):
         test_results = [(np.argmax(self.feedforward(x)), np.argmax(y)) 
                         for (x, y) in test_data]

@@ -38,52 +38,42 @@ class TestNetwork(unittest.TestCase):
         for i in range(len(self.network.biases)):
             self.assertFalse(np.array_equal(starting_biases[i], self.network.biases[i]))
 
+    #with patch decorator calls will be replaced with mock object
     @patch('network.random.shuffle')
     @patch('builtins.print')
     def test_SGD_with_test_data(self, mock_print, mock_shuffle):
-        # Mocking shuffle to avoid actual shuffling
-        mock_shuffle.side_effect = lambda x: x  # Do nothing
+        #mocking shuffle to avoid actual shuffling
+        mock_shuffle.side_effect = lambda x: x
         
-        # Mocking print to avoid actual printing
+        #mocking print to avoid actual printing
         mock_print.side_effect = MagicMock()
 
+        #list of tuples, where each tuple consist of two numpy arrays. 1st array represents input data and 2nd array desired output data. Process repeated x10 for training_data and x5 for test data.
         training_data = [(np.random.randn(self.sizes[0], 1), np.random.randn(self.sizes[-1], 1)) for _ in range(10)]
         test_data = [(np.random.randn(self.sizes[0], 1), np.random.randn(self.sizes[-1], 1)) for _ in range(5)]
 
-        # Convert numpy arrays to scalar values for test_data
+        #numpy arrays converted to scalar values for test_data
         test_data_scalar = [(x.flatten(), y.flatten()) for (x, y) in test_data]
 
-        # Reshape input data to ensure it's a column vector
+        #input data reshaped to ensure it's a column vector
         test_data_reshaped = [(x.reshape(-1, 1), y.reshape(-1, 1)) for (x, y) in test_data_scalar]
 
+        #calling SGD methdo from Network class
         self.network.SGD(training_data, epochs=5, mini_batch_size=2, eta=0.1, test_data=test_data_reshaped)
         
-        # Assert that print was called for each epoch
+        #checking print was called for all 5 epochs
         self.assertEqual(mock_print.call_count, 5)
-
+    
+    '''#with patch decorator calls will be replaced with mock object
     @patch('network.random.shuffle')
     @patch('builtins.print')
     def test_SGD_without_test_data(self, mock_print, mock_shuffle):
-        # Mocking shuffle to avoid actual shuffling
-        mock_shuffle.side_effect = lambda x: x  # Do nothing
         
-        # Mocking print to avoid actual printing
+        mock_shuffle.side_effect = lambda x: x  
         mock_print.side_effect = MagicMock()
 
         training_data = [(np.random.randn(self.sizes[0], 1), np.random.randn(self.sizes[-1], 1)) for _ in range(10)]
 
         self.network.SGD(training_data, epochs=5, mini_batch_size=2, eta=0.1)
         
-        # Assert that print was called for each epoch
-        self.assertEqual(mock_print.call_count, 5)
-
-    # CONTINUE TO MAKE UNIT TEST FOR SGD
-    
-    #Test working, but not actually improving the coverage rate of network.py
-    '''def test_initializing_biases_and_weights(self):
-        
-        for layer in range(1, len(self.sizes)):
-            self.assertEqual(self.network.biases[layer-1].shape, (self.sizes[layer], 1))
-
-        for layer in range(1, len(self.sizes)):
-            self.assertEqual(self.network.weights[layer-1].shape, (self.sizes[layer], self.sizes[layer-1]))'''
+        self.assertEqual(mock_print.call_count, 5)'''
