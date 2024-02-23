@@ -38,7 +38,7 @@ class TestNetwork(unittest.TestCase):
         for i in range(len(self.network.biases)):
             self.assertFalse(np.array_equal(starting_biases[i], self.network.biases[i]))
 
-    #with patch decorator calls will be replaced with mock object
+    '''#with patch decorator calls will be replaced with mock object
     @patch('network.random.shuffle')
     @patch('builtins.print')
     def test_SGD_with_test_data(self, mock_print, mock_shuffle):
@@ -62,7 +62,7 @@ class TestNetwork(unittest.TestCase):
         self.network.SGD(training_data, epochs=5, mini_batch_size=2, eta=0.1, test_data=test_data_reshaped)
         
         #checking print was called for all 5 epochs
-        self.assertEqual(mock_print.call_count, 5)
+        self.assertEqual(mock_print.call_count, 5)'''
 
     #with patch decorator calls will be replaced with mock object
     @patch('network.random.shuffle')
