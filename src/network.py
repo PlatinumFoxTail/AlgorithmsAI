@@ -128,6 +128,12 @@ class Network(object):
         return output_activations-y
 
     def evaluate(self, test_data):
-        test_results = [(np.argmax(self.feedforward(x)), np.argmax(y)) 
+        #neural network's output is index of neuron in final layer with highest activation
+        test_results = [(np.argmax(self.feedforward(x)), y)
                         for (x, y) in test_data]
         return sum(int(x == y) for (x, y) in test_results)
+
+    #def evaluate(self, test_data):
+        #test_results = [(np.argmax(self.feedforward(x)), np.argmax(y)) 
+                        #for (x, y) in test_data]
+        #return sum(int(x == y) for (x, y) in test_results)
