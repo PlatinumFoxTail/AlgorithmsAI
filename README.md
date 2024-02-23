@@ -24,4 +24,4 @@ This is a project related to Algorithms and Artificial Intelligence Lab course i
 
 [Week5](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/week_report_5.md)
 
-Week6
+[Week6](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/week_report_6.md)
