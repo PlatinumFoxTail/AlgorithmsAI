@@ -34,4 +34,4 @@ The neural network predicts the handwritten digits with an accuracy of approx. 9
 ![GHA workflow badge](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/workflows/CI/badge.svg) 
 [![codecov](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork/graph/badge.svg?token=4JBGC70B3Z)](https://codecov.io/gh/PlatinumFoxTail/MachineLearning_NeuralNetwork)
 
-For checkstyle pylint has been used. As of 23rd of Feb the code has been rated as 8.79/10.
+For checkstyle pylint has been used. As of 1st of March the code has been rated as 8.86/10.
