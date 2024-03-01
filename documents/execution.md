@@ -10,7 +10,7 @@ The network is tested in benchmark_networks.py, where same testing conditions is
 
 ## Performance
 
-The prediction accuracy for the network can be find in the user-interface e.g. if setting the neural network to 784 input neurons, 30 hidden layer neurons, 10 output neurons, 30 epochs, mini-batch size to 10, and a learning rate 3.0 the prediction accuracy of approx. 95% is achieved.
+The prediction accuracy for the network can be find in the user-interface e.g. if setting the neural network to 784 input neurons, 30 hidden layer neurons, 10 output neurons, 30 epochs, mini-batch size to 10, and a learning rate 3.0 the prediction accuracy of approx. 94% is achieved. More info regarding prediction accuracy of the neural network in [Testing documentation](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/testing_documentation.md).
 
 In the sanity check it seems that the neurons' outputs from the hidden layer and output layer is following the same pattern when comparing the simple network with the network. More info about the results are described in the [Testing documentation](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/documents/testing_documentation.md) 
 
