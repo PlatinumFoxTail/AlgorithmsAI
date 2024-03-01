@@ -6,7 +6,7 @@ This document specifies the Algorithms and Artificial Intelligence Lab course in
 
 The topic of the project is a program that predicts handwritten digits. The user can choose handwitten digits from a specific dataset (MNIST) to be evaluated by the program. Both the chosen handwritten digits by the user and the program predicted digits will be visible for the the user for comparsion. The user will be able to run the program in a stepwise interactive way, so that beside the digit prediction the functionality of the program will also be presented. Beside implementing the program the program will be tested and documented as well.
 
-The intention is to build a __multilayer perceptron (MLP) artificial neural network__ that will predict the value of the given handwritten digits. The MLP will be built from scratch i.e. not utilizing ready made MLP models such as PyTorch or scikit. The correct prediction rate of the MLP will be main optimization metric. The MLP was chosen, because i) its ability to predict images, ii) potential further build-on for more complex artificial neural networks such as convolutional neural network, and iii) its expected workload matches the width of the course.
+The intention is to build a __multilayer feedforward artificial neural network__ that will predict the value of the given handwritten digits. The neural network will be built from scratch i.e. not utilizing ready made neural network models such as PyTorch or scikit. The correct prediction rate of the neural network will be main optimization metric. The multilayer feedforward artificial neural network was chosen, because i) its ability to predict images, ii) potential further build-on for more complex artificial neural networks such as convolutional neural network, and iii) its expected workload matches the width of the course.
 
 The MNIST dataset was chosen as suitable starting point prior to analysis of more complex images. MNIST is a widely used benchmark data set in the field of machine learning and computer vision.  
 
@@ -25,7 +25,7 @@ The key source for generating the program is the following reference:
 
 Other used sources to support the key source are:
 
-* [Wikipedia, Multilayer perceptron ](https://en.wikipedia.org/wiki/Multilayer_perceptron)
+* [Wikipedia, Feedforward neural network ](https://en.wikipedia.org/wiki/Feedforward_neural_network)
 * [Mathemathics for Machine learning ](https://mml-book.github.io/)
 
 ## Documentation
