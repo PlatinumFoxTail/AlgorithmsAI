@@ -11,35 +11,35 @@ validation_data and test_data are similar to training_data, but contains only
 
 def load_data():
     #opening gzip-compressed file in binary read mode
-    f = gzip.open('mnist.pkl.gz', 'rb')
+    gzip_file = gzip.open('mnist.pkl.gz', 'rb')
 
     #deserialize the data from the file with pickel
-    training_data, validation_data, test_data = pickle.load(f, encoding="latin1")
-    f.close()
+    training_data, validation_data, test_data = pickle.load(gzip_file, encoding="latin1")
+    gzip_file.close()
 
     return (training_data, validation_data, test_data)
 
 
-def load_data_wrapper():
-    tr_d, va_d, te_d = load_data()
+def prepare_data():
+    training_data, validation_data, test_data = load_data()
 
-    #first tuple element x is 784-dimensional NumPy array representing images
-    training_inputs = [np.reshape(x, (784, 1)) for x in tr_d[0]]
-    validation_inputs = [np.reshape(x, (784, 1)) for x in va_d[0]]
-    test_inputs = [np.reshape(x, (784, 1)) for x in te_d[0]]
+    #first tuple element image is 784-dimensional NumPy array representing images
+    training_inputs = [np.reshape(image, (784, 1)) for image in training_data[0]]
+    validation_inputs = [np.reshape(image, (784, 1)) for image in validation_data[0]]
+    test_inputs = [np.reshape(image, (784, 1)) for image in test_data[0]]
 
-    #second tuple element y is 10-dimensional NumPy array i.e. image digit value
-    training_results = [vectorized_result(y) for y in tr_d[1]]
+    #second tuple element label is 10-dimensional NumPy array i.e. image digit value
+    training_results = [label_to_vector(label) for label in training_data[1]]
     training_data = zip(training_inputs, training_results)
 
-    #second tuple element y is an integer i.e. image digit value
-    validation_data = zip(validation_inputs, va_d[1])
-    test_data = zip(test_inputs, te_d[1])
+    #second tuple element label is an integer i.e. image digit value
+    validation_data = zip(validation_inputs, validation_data[1])
+    test_data = zip(test_inputs, test_data[1])
 
     return (training_data, validation_data, test_data)
 
 #unit vector to describe right digit in vector from i.e. certain index 1.0 and other indexes 0 is digit=index
-def vectorized_result(j):
-    e = np.zeros((10, 1))
-    e[j] = 1.0
-    return e
+def label_to_vector(digit):
+    label_vector = np.zeros((10, 1))
+    label_vector[digit] = 1.0
+    return label_vector
