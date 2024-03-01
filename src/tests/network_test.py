@@ -8,7 +8,7 @@ class TestNetwork(unittest.TestCase):
         self.sizes = [5, 4, 3]
         self.network = Network(self.sizes)
         self.input_data = np.random.randn(self.sizes[0], 1)
-        self.eta = 0.1
+        self.learning_rate = 0.1
 
     def test_constructor_setting_network_right(self):
         
@@ -30,7 +30,7 @@ class TestNetwork(unittest.TestCase):
         starting_biases = [np.copy(b) for b in self.network.biases]
         
         #revising weights and biases
-        self.network.update_mini_batch(mini_batch, self.eta)
+        self.network.update_mini_batch(mini_batch, self.learning_rate)
         
         #checking weights and biases updated
         for i in range(len(self.network.weights)):
@@ -48,7 +48,7 @@ class TestNetwork(unittest.TestCase):
         
         training_data = [(np.random.randn(self.sizes[0], 1), np.random.randn(self.sizes[-1], 1)) for _ in range(10)]
         
-        self.network.SGD(training_data, epochs=5, mini_batch_size=2, eta=0.1)
+        self.network.SGD(training_data, epochs=5, mini_batch_size=2, learning_rate=0.1)
         
         #checking print was called for all 5 epochs, despite of no test_data provided in previous line
         self.assertEqual(mock_print.call_count, 5)

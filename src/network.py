@@ -36,99 +36,105 @@ class Network(object):
         #initializing random weights from -1.0 to 1.0 for the weight, as in simple_network.py
         self.weights = [np.random.uniform(-1.0, 1.0, (y, x))
                         for x, y in zip(sizes[:-1], sizes[1:])]'''
-        
+
 
     #feedforward method, where output from one layer is used as input to the next layer
-    def feedforward(self, a):
-        for b, w in zip(self.biases, self.weights):
-            #np.dot(w, a) is dot product of arrays w, and a
-            a = sigmoid(np.dot(w, a) + b)
-        return a
+    def feedforward(self, input_activations):
+        for biases, weights in zip(self.biases, self.weights):
+            #np.dot(weights, input_activations) is dot product of arrays weights, and input_activations
+            input_activations = sigmoid(np.dot(weights, input_activations) + biases)
+        return input_activations
 
     #stochastic gradient descent (SGD) method, where Network object is learning
-    def SGD(self, training_data, epochs, mini_batch_size, eta,
+    def SGD(self, training_data, epochs, mini_batch_size, learning_rate,
             test_data=None):
 
         #list of tuples with training input and desired output
         training_data = list(training_data)
-        n = len(training_data)
+        n_training_data = len(training_data)
 
         if test_data:
             test_data = list(test_data)
-            n_test = len(test_data)
+            n_test_data = len(test_data)
 
         #epochs is number of complete passes through training_data
         for j in range(epochs):
             random.shuffle(training_data)
             #mini-batch is subset of complete training_data
             mini_batches = [
-                training_data[k:k+mini_batch_size]
-                for k in range(0, n, mini_batch_size)]
+                training_data[start_index:start_index+mini_batch_size]
+                for start_index in range(0, n_training_data, mini_batch_size)]
             for mini_batch in mini_batches:
-                #eta is learning rate
-                self.update_mini_batch(mini_batch, eta)
+                self.update_mini_batch(mini_batch, learning_rate)
             #tracking partial partial progress
             if test_data:
-                print("Epoch {} : {} / {}".format(j,self.evaluate(test_data),n_test))
+                print("Epoch {} : {} / {}".format(j,self.evaluate(test_data),n_test_data))
             else:
                 print("Epoch {} complete".format(j))
 
-    #applying single step of gradient descent using backpropagation to update network's weights and biases
-    def update_mini_batch(self, mini_batch, eta):
+    def initialize_gradient_arrays(self):
         #initializing two arrays of zeros to store the gradients of the cost function for biases and weights
-        nabla_b = [np.zeros(b.shape) for b in self.biases]
-        nabla_w = [np.zeros(w.shape) for w in self.weights]
-        for x, y in mini_batch:
-            #backpropagation algorithm
-            delta_nabla_b, delta_nabla_w = self.backprop(x, y)
-            nabla_b = [nb+dnb for nb, dnb in zip(nabla_b, delta_nabla_b)]
-            nabla_w = [nw+dnw for nw, dnw in zip(nabla_w, delta_nabla_w)]
-        self.weights = [w-(eta/len(mini_batch))*nw
-                        for w, nw in zip(self.weights, nabla_w)]
-        self.biases = [b-(eta/len(mini_batch))*nb
-                       for b, nb in zip(self.biases, nabla_b)]
+        gradient_b = [np.zeros(b.shape) for b in self.biases]
+        gradient_w = [np.zeros(w.shape) for w in self.weights]
+        return gradient_b, gradient_w
 
-    #calculating (nabla_b, nabla_w) tuple, which are layer-by-layer lists of...
-    #numpy arrays and representing gradient of cost function C_x
-    def backprop(self, x, y):
-        nabla_b = [np.zeros(b.shape) for b in self.biases]
-        nabla_w = [np.zeros(w.shape) for w in self.weights]
+    #applying single step of gradient descent using backpropagation to update network's weights and biases
+    def update_mini_batch(self, mini_batch, learning_rate):
+        gradient_b, gradient_w = self.initialize_gradient_arrays()
+
+        for input_activation, expected_output in mini_batch:
+            #backpropagation algorithm
+            delta_gradient_b, delta_gradient_w = self.backprop(input_activation, expected_output)
+            gradient_b = [gradient_b+delta_gradient_b
+                          for gradient_b, delta_gradient_b in zip(gradient_b, delta_gradient_b)]
+            gradient_w = [gradient_w+delta_gradient_w
+                          for gradient_w, delta_gradient_w in zip(gradient_w, delta_gradient_w)]
+        self.weights = [weights-(learning_rate/len(mini_batch))*gradient_w
+                        for weights, gradient_w in zip(self.weights, gradient_w)]
+        self.biases = [biases-(learning_rate/len(mini_batch))*gradient_b
+                       for biases, gradient_b in zip(self.biases, gradient_b)]
+
+    #calculating (gradient_b, gradient_w) tuple, which are layer-by-layer lists of...
+    #numpy arrays and representing gradient of cost function
+    def backprop(self, input_activation, expected_output):
+        gradient_b, gradient_w = self.initialize_gradient_arrays()
 
         #feedforward pass, calculating activations and wighted inputs for each layer
-        activation = x
+        activation = input_activation
         #initiating storing all activations layer-by-layer
-        activations = [x]
-        #initiating storing all z vectors, layer-by-layer
-        zs = []
-        for b, w in zip(self.biases, self.weights):
-            z = np.dot(w, activation)+b
-            zs.append(z)
-            activation = sigmoid(z)
+        activations = [input_activation]
+        #initiating storing all weighted inputs, layer-by-layer
+        weighted_inputs = []
+        for biases, weights in zip(self.biases, self.weights):
+            weighted_sum = np.dot(weights, activation)+biases
+            weighted_inputs.append(weighted_sum)
+            activation = sigmoid(weighted_sum)
             activations.append(activation)
 
-        #backward pass, calculating error delta at output layer and propagates it...
+        #backward pass, calculating layer error at output layer and propagates it...
         #backward to compute gradients of the cost function with respect to biases...
         #and weights
-        delta = self.cost_derivative(activations[-1], y) * \
-            sigmoid_prime(zs[-1])
-        nabla_b[-1] = delta
-        nabla_w[-1] = np.dot(delta, activations[-2].transpose())
-        # l=1: last layer of neurons, l=2: second last layer of neurons, and so forth.
-        for l in range(2, self.num_layers):
-            z = zs[-l]
-            sp = sigmoid_prime(z)
-            delta = np.dot(self.weights[-l+1].transpose(), delta) * sp
-            nabla_b[-l] = delta
-            nabla_w[-l] = np.dot(delta, activations[-l-1].transpose())
+        layer_error = self.cost_derivative(activations[-1], expected_output) * \
+            sigmoid_prime(weighted_inputs[-1])
+        gradient_b[-1] = layer_error
+        gradient_w[-1] = np.dot(layer_error, activations[-2].transpose())
+        #updating the errors and gradients by iterating backward through the layers
+        #layer=1: last layer of neurons, layer=2: second last layer of neurons, and so forth.
+        for layer in range(2, self.num_layers):
+            weighted_sum = weighted_inputs[-layer]
+            sp = sigmoid_prime(weighted_sum)
+            layer_error = np.dot(self.weights[-layer+1].transpose(), layer_error) * sp
+            gradient_b[-layer] = layer_error
+            gradient_w[-layer] = np.dot(layer_error, activations[-layer-1].transpose())
 
-        return (nabla_b, nabla_w)
+        return (gradient_b, gradient_w)
 
     #returns vector of partial derivatives of the cost with respect to the output activations
-    def cost_derivative(self, output_activations, y):
-        return output_activations-y
+    def cost_derivative(self, output_activations, expected_output):
+        return output_activations-expected_output
 
     def evaluate(self, test_data):
         #neural network's output is index of neuron in final layer with highest activation
-        test_results = [(np.argmax(self.feedforward(x)), y)
-                        for (x, y) in test_data]
-        return sum(int(x == y) for (x, y) in test_results)
+        test_results = [(np.argmax(self.feedforward(input_data)), label)
+                        for (input_data, label) in test_data]
+        return sum(int(prediction == label) for (prediction, label) in test_results)
