@@ -15,3 +15,4 @@ poetry install
 3. Open the digit_predicter.ipynb Jupyter notebook
 
 4. Run the file to test how the model predicts your chosen MNIST image
+* Remember to run each code block from top to down, by pressing the play buttons on the left-hand side.
