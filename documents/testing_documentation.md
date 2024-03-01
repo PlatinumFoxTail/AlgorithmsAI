@@ -1,6 +1,6 @@
 # Testing documentation
 
-The testing focus of this project is set on the network (network.py), and not other parts such as the user interface (digit_predicter.ipynb). The testing can be divided into two parts: Unit testing & checkstyle and Sanity check. The former is self-explanatory, and the Sanity check includes a comparsion of intermediate outputs from the network and a simple network based on simplified input and output.
+The testing focus of this project is set on the network (network.py), and not other parts such as the user interface (digit_predicter.ipynb). The testing can be divided into three parts: Sanity check, Prediction accuracy, and Unit testing & checkstyle. The last is self-explanatory, and the Sanity check includes a comparsion of intermediate outputs from the network and a simple network based on simplified input and output. Prediction accuracy visualizes the prediction accuracy of the neural network as a function of training epochs.
 
 ## Sanity check
 
@@ -22,6 +22,12 @@ More importantly it seems that, both networks output from output layer (right-ha
 
 1. In the network.py file, the biases and weights need to be uncommented on line 30-39 and commented out on lines 23-28. https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/58606d727707a75be0624a31732c30e3411abfe9/src/network.py#L23-L39
 2. Run benchmark_networks.py
+
+## Prediction accuracy
+
+The neural network predicts the handwritten digits with an accuracy of approx. 94%. In the graph below, it seems that ~94% prediction accuracy is reached already after 15 training epochs with 784 neurons in the input layer, 30 neurons in the hidden layer, 10 neurons in the output layer, 30 training epochs, mini-batch size 10, and learning rate 3.0 (obtained when running the training neural network block in digit_predicter.ipynb). Decent prediction accuracies are also achieved with few training epochs e.g. in the graph below already ~90% prediction accuracy after first trainig epoch. 
+
+![Figure 1](https://github.com/PlatinumFoxTail/MachineLearning_NeuralNetwork/blob/main/images/010324.%20prediction%20accuracy%20per%20training%20epoch.png)
 
 ## Unit testing and checkstyle
 
